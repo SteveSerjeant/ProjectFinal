@@ -1,0 +1,65 @@
+
+
+header {
+    overflow: hidden;
+}
+
+#navbar {
+
+    text-align: center;
+
+}
+
+#logo{
+    float: left;
+    height: 60px;
+    width: 20%;
+    font-family: Arial, serif;
+}
+
+#logo img {
+    width: 30%;
+    height: 53px;
+    float: left;
+}
+
+
+
+#menu{
+    float: right;
+    width: 60%;
+    height: 60px;
+    font-family: Arial, serif;
+}
+
+#menu ul{
+    text-align: center;
+    float: right;
+    background: #4a535b;
+}
+
+#menu li{
+    display: inline-block;
+
+}
+
+#menu li a, #menu li span{
+    display: inline-block;
+    padding: 1.5em;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    /*line-height: 30px;*/
+}
+
+#menu li a{
+    color: #fff;
+}
+
+#menu li:hover a, #menu li span{
+    background: #fff;
+    /*color: #0074d9;*/
+    color: #4a535b;
+    border-left: 1px solid #4a535b;
+    text-decoration: none;
+}
