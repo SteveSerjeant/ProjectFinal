@@ -41,6 +41,7 @@ include_once ("dbconn.php");
 
 
                 </table>
+
                 <table class = "outputTable" id="output" style="width: 50%; height: 20%; text-align: center">
                     <colgroup>
                         <col span="1" style="width: 5%">
