@@ -1,14 +1,37 @@
 
 .wrapper {
     align-items: center;
-    width: 300px;
+    width: 350px;
     background-color: #9bb7d4;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    height: 100px;
+    height: 120px;
+    /*border: 1px solid;*/
 }
 
 #noteTitle {
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 5px;
+}
+
+#toSave {
+
+    padding-top: 10px;
+    padding-left: 10px;
+
+}
+#btnSave {
+    margin-top: 10px;
+    text-align: center;
+    background-color: red;
+    margin-left: 25px;
+}
+
+.textBox {
+    padding-left: 10px;
+    font-family: Arial;
+    font-size: medium;
 }
