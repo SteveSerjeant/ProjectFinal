@@ -12,7 +12,7 @@ require_once "dbconn.php";
 ?>
 
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Security Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,90 +29,84 @@ require_once "dbconn.php";
 </header>
 
 <section>
-<?php
-$toSave = $_POST['toSave'];
-echo $toSave."<br>";
-//$query = "SELECT * FROM networkdeviceslog WHERE CONCAT(macAddress, '', ipAddress, '', hostName, '') LIKE '%$toSave%'";
-//$result = mysqli_query($con, $query);
-//$row = mysqli_fetch_assoc($result);
-//
-//echo $row['ipAddress'];
 
-$sql = "SELECT * FROM networkdeviceslog WHERE CONCAT(macAddress, '', ipAddress, '', hostName, '') LIKE '%$toSave%'";
-$result = $con->query($sql);
-if ($result->num_rows > 0) {
+    <div class="wrapper3">
+        <table class = "outputTable" id="output" style="width: 50%; height: 20%; text-align: center">
+            <?php $toSave = $_POST['toSave'];?>
+            <colgroup>
+                <col span="1" style="width: 10%">
 
-    while($row = $result->fetch_assoc()){
-        echo "macAddress: " . $row["macAddress"] . "ipAddress: " . $row["ipAddress"] . "hostName: " . $row["hostName"] . "Timestamp: " . $row["scanTimestamp"] . "<br>";
+            </colgroup>
+            <tr bgcolor="#afeeee" style="text-align: center">
+                <th style='text-align: center'>Search String</th>
+            </tr>
+            <tr style='text-align: center'>
+                <td style='text-align: center' ><?php echo "$toSave"?></td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="wrapper3">
+
+    <?php
+    $sql = "SELECT * FROM networkdeviceslog WHERE CONCAT(macAddress, '', ipAddress, '', hostName, '') LIKE '%$toSave%'";
+    $result = $con->query($sql);
+
+    if ($result->num_rows == 0) {
+
+        ?>
+
+        <table class = "outputTable" id="output" style="width: 50%; height: 20%; text-align: center">
+            <colgroup>
+                <col span="1" style="width: 10%">
+            </colgroup>
+            <tr bgcolor="#afeeee" style="text-align: center">
+                <th style='text-align: center'>No results found, please try again</th>
+            </tr>
+
+        </table>
+
+        <?php
+    }
+    else {
+
+        ?>
+
+        <table class = "outputTable" id="output" style="width: 60%; height: 20%; text-align: center">
+            <colgroup>
+                <col span="1" style="width: 20%">
+                <col span="1" style="width: 20%">
+                <col span="1" style="width: 20%">
+                <col span="1" style="width: 20%">
+            </colgroup>
+
+            <tr bgcolor="#afeeee" style="text-align: center; margin-top: 5px">
+                <th style='text-align: center'>macAddress</th>
+                <th style='text-align: center'>ipAddress</th>
+                <th style='text-align: center'>hostName</th>
+                <th style='text-align: center'>Scan Timestamp</th>
+            </tr>
+
+
+        <?php
+        echo "";
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr style='text-align: center' >";
+            echo "<td style='text-align: center' >" . $row['macAddress'] . "</td>";
+            echo "<td style='text-align: center' >" . $row['ipAddress'] . "</td>";
+            echo "<td style='text-align: center' >" . $row['hostName'] . "</td>";
+            echo "<td style='text-align: center' >" . $row['scanTimestamp'] . "</td>";
+            echo "</tr>";
         }
     }
-
-    else {
-        echo "o results";
-    }
-
-//$con->close();
+    mysqli_close($con);
     ?>
-        <div class="wrapper3">
 
-        <div class="container-fluid">
-
-            <div class="row3">
-
-                <table class = "outputTable" id="output" style="width: 60%; height: 20%; text-align: center">
-                    <colgroup>
-                        <col span="1" style="width: 20%">
-                        <col span="1" style="width: 20%">
-                        <col span="1" style="width: 20%">
-                        <col span="1" style="width: 20%">
-                    </colgroup>
-
-                    <tr bgcolor="#afeeee" style="text-align: center; margin-top: 5px">
-                        <th style='text-align: center'>macAddress</th>
-                        <th style='text-align: center'>ipAddress</th>
-                        <th style='text-align: center'>hostName</th>
-                        <th style='text-align: center'>Scan Timestamp</th>
-                    </tr>
-
-                    <?php
-//
-//                    $sql = 'CALL getScandates()';
-//
-//                    $stmt = $con->prepare($sql);
-//                    $stmt->execute();
-//                    $result = $stmt->get_result();
-
-                    $sql = "SELECT * FROM networkdeviceslog WHERE CONCAT(macAddress, '', ipAddress, '', hostName, '') LIKE '%$toSave%'";
-                    $result = $con->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr style='text-align: center' >";
-                            echo "<td style='text-align: center' >" . $row['macAddress'] . "</td>";
-                            echo "<td style='text-align: center' >" . $row['ipAddress'] . "</td>";
-                            echo "<td style='text-align: center' >" . $row['hostName'] . "</td>";
-                            echo "<td style='text-align: center' >" . $row['scanTimestamp'] . "</td>";
-//                        echo "<td><a href='scanResults.php?id=$row[scanTimestamp]'>More Info</a>";
-                            echo "</tr>";
-                        }
-
-
-                    }
-                    else {
-                        echo "o results";
-                    }
-//                    $stmt->close();
-                    mysqli_close($con);
-
-
-
-
-
-                    ?>
     </table>
+
     </div>
-    </div>
-    </div>
+
 
 
 </section>
@@ -126,5 +120,3 @@ if ($result->num_rows > 0) {
 </footer>
 
 </html>
-
-
