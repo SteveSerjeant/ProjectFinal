@@ -29,6 +29,17 @@ require_once "dbconn.php";
 </header>
 
 <section>
+    <div class="search">
+
+        <form action="searchScans.php" method="post">
+            <div class="textBox">
+                <label for="toSave">Search String</label>
+                <input type="text" style="font-size: large" name="toSave" id="toSave">
+            </div>
+            <input type="submit" class="btn btn-primary" id="btnSave" name="submit" value="Search">
+
+        </form>
+    </div>
 
     <div class="wrapper3">
 
