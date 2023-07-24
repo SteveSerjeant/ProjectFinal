@@ -28,6 +28,7 @@ include_once ("dbconn.php");
                 <label for="toSearch">Search String</label>
                 <input type="text" style="font-size: large" name="toSearch" id="toSearch">
             </div>
+            <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
             <input type="submit" class="btn btn-primary" id="btnSave" name="submit" value="Search">
 
         </form>

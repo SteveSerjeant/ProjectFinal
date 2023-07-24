@@ -31,6 +31,22 @@ require_once "dbconn.php";
 <section>
 
 <div class="wrapper3">
+    <div class = "row3">
+        <table class = "outputTable" id="output" style="width: 50%; height: 20%; text-align: center">
+            <?php $id = $_POST['id'];?>
+            <colgroup>
+                <col span="1" style="width: 10%">
+
+            </colgroup>
+            <tr bgcolor="#afeeee" style="text-align: center">
+                <th style='text-align: center'>IP Address</th>
+            </tr>
+            <tr style='text-align: center'>
+                <td style='text-align: center' ><?php echo "$id"?></td>
+            </tr>
+
+
+        </table>
 
     <table class = "outputTable" id="output" style="width: 50%; height: 20%; text-align: center">
         <?php $toSearch = $_POST['toSearch'];?>
