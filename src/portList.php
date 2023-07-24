@@ -21,6 +21,17 @@ include_once ("dbconn.php");
 </header>
 
 <section>
+    <div class="search">
+
+        <form action="portInfoSearch.php" method="post">
+            <div class="textBox">
+                <label for="toSearch">Search String</label>
+                <input type="text" style="font-size: large" name="toSearch" id="toSearch">
+            </div>
+            <input type="submit" class="btn btn-primary" id="btnSave" name="submit" value="Search">
+
+        </form>
+    </div>
 
     <div class = "wrapper3">
         <div class="container-fluid">
@@ -42,8 +53,9 @@ include_once ("dbconn.php");
 
                 </table>
 
-                <table class = "outputTable" id="output" style="width: 50%; height: 20%; text-align: center">
+                <table class = "outputTable" id="output" style="width: 60%; height: 20%; text-align: center">
                     <colgroup>
+                        <col span="1" style="width: 8%">
                         <col span="1" style="width: 5%">
                         <col span="1" style="width: 5%">
                         <col span="1" style="width: 5%">
@@ -53,6 +65,7 @@ include_once ("dbconn.php");
 
 
                     <tr bgcolor="#afeeee" style="text-align: center">
+                        <th style='text-align: center'>Scan Date</th>
                         <th style='text-align: center'>Port ID</th>
                         <th style='text-align: center'>State</th>
                         <th style='text-align: center'>Service</th>
@@ -77,6 +90,7 @@ include_once ("dbconn.php");
 
                         while ($row = $result->fetch_assoc()){
                             echo "<tr style='text-align: center' >";
+                            echo "<td style='text-align: center' >" . $row['timestamp'] . "</td>";
                             echo "<td style='text-align: center' >" . $row['portID'] . "</td>";
                             echo "<td style='text-align: center'>" . $row['state'] . "</td>";
                             echo "<td style='text-align: center'>" . $row['serviceName'] . "</td>";

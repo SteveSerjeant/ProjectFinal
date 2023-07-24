@@ -25,7 +25,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <link rel="stylesheet" href="../css/forAlerts.css" type="text/css">
 
     <!--bootstrap css for alerts-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
 
 
 </head>
@@ -63,6 +63,7 @@ if ($alert == "updated") {echo "<div class=\"alert alert-success alert-dismissib
                             <col span="1" style="width: 10%">
                             <col span="1" style="width: 5%">
                             <col span="1" style="width: 5%">
+                            <col span="1" style="width: 5%">
                         </colgroup>
 
                         <tr>
@@ -80,6 +81,8 @@ if ($alert == "updated") {echo "<div class=\"alert alert-success alert-dismissib
                                 <span class="tooltip">Clicking on the link gives the user the option to add the notes</span></th>
                             <th class="moreInfo">Port List
                                 <span class="tooltip">Click on the link to display port and services running for each device on the network</span></th>
+                            <th class="moreInfo">Search
+                                <span class="tooltip">Click on the link to find amount of times this device found in scans</span></th>
                         </tr>
 
                         <?php
@@ -99,6 +102,7 @@ if ($alert == "updated") {echo "<div class=\"alert alert-success alert-dismissib
                             echo "<td style='text-align: left'>" . $row['notes'] . "</td>";
                             echo "<td bgcolor='#6495ed' style='text-align: center'><a href='addNotes.php?id=$row[ipAddress]'><font color='white'>Add Notes</font> </a>";
                             echo "<td><a href='portList.php?id=$row[ipAddress]'>Port List</a>";
+                            echo "<td><a href='searchScansIP.php?id=$row[ipAddress]'>Search</a>";
                             echo "</tr>";
                         }
                         $stmt->close();
