@@ -25,7 +25,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <link rel="stylesheet" href="../css/forAlerts.css" type="text/css">
 
     <!--bootstrap css for alerts-->
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
 
 </head>
 
@@ -35,14 +36,15 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 $alert = (isset($_GET["err"])) ? base64_decode($_GET["err"]) : "";
 if ($alert == "added") {echo "<div class=\"alert alert-success alert-dismissible\" role=\"alert\" id=\"banner\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Note Added</strong></div>";}
 
+$alert = (isset($_GET["err"])) ? base64_decode($_GET["err"]) : "";
+if ($alert == "updated") {echo "<div class=\"alert alert-success alert-dismissible\" role=\"alert\" id=\"banner\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Password Updated</strong></div>";}
+
 ?>
 <header>
     <?php
     include 'headerVTwo.php';
     ?>
 </header>
-
-
 
 <article>
 
@@ -79,7 +81,6 @@ if ($alert == "added") {echo "<div class=\"alert alert-success alert-dismissible
                             <th class="moreInfo">Port List
                                 <span class="tooltip">Click on the link to display port and services running for each device on the network</span></th>
                         </tr>
-
 
                         <?php
 
@@ -122,11 +123,8 @@ if ($alert == "added") {echo "<div class=\"alert alert-success alert-dismissible
 <!-- for alert messages -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-
-
 <script src="../javascript/forAlerts.js"></script>
 
 </body>
-
 
 </html>

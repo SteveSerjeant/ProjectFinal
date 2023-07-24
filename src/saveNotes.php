@@ -7,8 +7,7 @@ echo $toSave."<br>";
 
 if (isset($_POST['submit'])) {
 
-    echo "Save was pressed!"."<br>";
-//    $ip =- $conn->real_escape_string($_POST['id']);
+//    echo "Save was pressed!"."<br>";
     $ip = $con->real_escape_string($_POST['id']);
 
     echo $ip;
@@ -25,6 +24,6 @@ if (isset($_POST['submit'])) {
         $stmt->close();
         mysqli_close($con);
         header('Location: homePage.php');
-//        header('Location: homePage.php?err=' . base64_encode("added"));
+        header('Location: homePage.php?err=' . base64_encode("added"));
     }
 }

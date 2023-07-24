@@ -35,6 +35,7 @@ require_once "dbconn.php";
         <div class="container-fluid">
 
             <div class="row3">
+
                 <table class = "outputTable" id="output" style="width: 40%; height: 20%; text-align: center">
                     <colgroup>
                         <col span="1" style="width: 5%">

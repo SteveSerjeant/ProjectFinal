@@ -18,10 +18,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-
     <link rel="stylesheet" href="../css/outputTable.css" type="text/css">
-
 
 </head>
 
@@ -31,36 +28,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     include 'headerVTwo.php';
     ?>
 </header>
-<div class="wrapper3">
 
-    <div class="container-fluid">
-
-        <div class="row3">
-            <table class = "outputTable" id="output">
-                <!--                <table class = "outputTable" id="output" style="width: 85%; height: 20%; text-align: center">-->
-                <?php $id = $_GET['id'];?>
-
-                <colgroup>
-                    <col span="1" style="width: 10%">
-                    <col span="1" style="width: 10%">
-                    <col span="1" style="width: 10%">
-
-                </colgroup>
-
-                <tr bgcolor="#afeeee" style="text-align: center">
-                    <th style='text-align: center'>IP Address</th>
-                    <th style='text-align: center'>OS</th>
-                    <th style='text-align: center'>More info</th>
-
-                </tr>
-
-            </table>
-
-        </div>
-
+<section>
+    <div class="text">
+        <p>
+        <h1>This page was intended to show further info dynamically from the NVD website.</h1>
+        </p>
+    </div>
+    <div class="text">
+        <p>
+        <h1>However, development on this aspect was sadly incomplete.</h1>
+        </p>
     </div>
 
-</div>
+</section>
 
 </body>
 
