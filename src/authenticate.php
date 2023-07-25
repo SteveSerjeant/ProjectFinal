@@ -4,7 +4,6 @@ session_start();
 
 include_once ("dbconn.php");
 
-
 if ($con === false) {
 
     die("Connection Error. " . mysqli_connect_error());

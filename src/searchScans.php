@@ -3,7 +3,7 @@
 session_start();
 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
+    header("location: index.php");
     exit;
 }
 
@@ -50,7 +50,7 @@ require_once "dbconn.php";
     <div class="wrapper3">
 
     <?php
-    $sql = "SELECT * FROM networkdeviceslog WHERE CONCAT(macAddress, '', ipAddress, '', hostName, '') LIKE '%$toSave%'";
+    $sql = "SELECT * FROM networkdeviceslog WHERE CONCAT(macAddress, '', ipAddress, '', hostName, '', scanTimestamp, '') LIKE '%$toSave%'";
     $result = $con->query($sql);
 
     if ($result->num_rows == 0) {

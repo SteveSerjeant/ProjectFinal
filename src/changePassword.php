@@ -3,7 +3,7 @@
 session_start();
 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
+    header("location: index.php");
     exit;
 }
 
@@ -55,7 +55,7 @@ if ($error == "match") {echo "<div class=\"alert alert-danger alert-dismissible\
         <label for="password">
             <i class="fas fa-lock"></i>
         </label>
-        <input type="password" name="password" placeholder="Password" id="password" required>
+        <input type="password" name="password" placeholder="New Password" id="password" required>
 
         <label for="confirmPassword">
             <i class="fas fa-lock"></i>

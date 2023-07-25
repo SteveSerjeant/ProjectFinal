@@ -28,10 +28,7 @@
 </head>
 
 <body>
-<!--<header>-->
-<!--    --><?php //include 'header.php' ?>
-<!--    --><?php //include 'navbar.php' ?>
-<!--</header>-->
+
 
 <div class="login">
     <h1>Change Password</h1>
