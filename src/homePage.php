@@ -68,7 +68,7 @@ if ($alert == "updated") {echo "<div class=\"alert alert-success alert-dismissib
 
                         <tr>
                             <th class="moreInfo">Host Name
-                                <span class="tooltip">This is the device hostname, found in the about your PC section</span></th>
+                                <span class="tooltip">This is the device hostname, found in the "about your PC" section</span></th>
                             <th class="moreInfo">IP Address
                                 <span class="tooltip">This is the unique internal "address" for this device on this network</span></th>
                             <th class="moreInfo">MAC Address
