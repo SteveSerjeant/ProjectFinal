@@ -10,7 +10,7 @@ if (file_exists("C:\Program Files\Ampps\www\Security_Dashboard\src\scanResultDev
     unlink($forDelete1);
 }
 
-exec("C:\Program Files\Ampps\www\ProjectVersionTwo\src\scanOnDemand.bat");
+exec("C:\Program Files\Ampps\www\ProjectFinal\src\scanOnDemand.bat");
 
 filesExist();
 

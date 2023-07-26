@@ -1,10 +1,9 @@
 
 .document {
-    font-family: Arial;
     overflow: auto;
+    font-family: Arial;
 }
 .mainTitle {
-    /*font-family: Arial;*/
     font-size: large;
     text-align: center;
     text-decoration: underline;
@@ -20,10 +19,16 @@
 
 }
 
-.homePage {
+.mainText {
     margin-top: 30px;
     margin-left: 60px;
     margin-right: 60px;
     font-size: large;
     text-align: justify;
+}
+
+.subHeading {
+    margin-left: 60px;
+    margin-right: 100px;
+
 }
