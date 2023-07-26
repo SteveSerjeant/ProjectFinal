@@ -1,0 +1,29 @@
+
+.document {
+    font-family: Arial;
+    overflow: auto;
+}
+.mainTitle {
+    /*font-family: Arial;*/
+    font-size: large;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 30px;
+}
+
+.intro {
+    margin-top: 20px;
+    margin-left: 70px;
+    margin-right: 70px;
+    font-size: large;
+    text-align: justify;
+
+}
+
+.homePage {
+    margin-top: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: large;
+    text-align: justify;
+}

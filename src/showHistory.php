@@ -3,7 +3,7 @@
 session_start();
 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
+    header("location: index.php");
     exit;
 }
 
@@ -54,8 +54,10 @@ require_once "dbconn.php";
                     </colgroup>
 
                     <tr bgcolor="#afeeee" style="text-align: center; margin-top: 5px">
-                        <th style='text-align: center'>Scan Date</th>
-                        <th style='text-align: center'>Scan Results</th>
+                        <th class="moreInfo" style='text-align: center'>Scan Date
+                        <span class="tooltip">This is the timestamp when the scan was performed</span></th>
+                        <th class="moreInfo" style='text-align: center'>Scan Results
+                            <span class="tooltip">Link to an output table showing devices found during this scan</span></th>
                     </tr>
 
                     <?php
