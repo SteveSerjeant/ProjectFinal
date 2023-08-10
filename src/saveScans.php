@@ -3,8 +3,8 @@
 include 'dbconn.php';
 
 //load xml file
-$file = simplexml_load_file("C:\Program Files\Ampps\www\projectVersionTwo\src\scanResultDevices.xml");
-$fileOS = simplexml_load_file("C:\Program Files\Ampps\www\projectVersionTwo\src\scanResultOS.xml");
+$file = simplexml_load_file("C:\Program Files\Ampps\www\ProjectFinal\src\scanResultDevices.xml");
+$fileOS = simplexml_load_file("C:\Program Files\Ampps\www\ProjectFinal\src\scanResultOS.xml");
 
 $timestamp = $file['startstr'];
 echo "Devices: " . $timestamp . "<br>";
@@ -30,6 +30,7 @@ foreach ($file->host as $host){
     $stmt2->bind_param('ssss', $mac, $ip, $hostName, $timestamp);
     $stmt2->execute();
 
+    // this add device to networkDevices if new device found
     $stmt3 = $con->prepare("CALL insertDevicesV2(?,?,?,?)");
     $stmt3->bind_param('ssss', $mac, $ip, $hostName, $timestamp);
     $stmt3->execute();
@@ -77,6 +78,7 @@ foreach ($fileOS->host as $hostOS){
     $stmt4->bind_param('sssi', $ipOS, $timestamp, $osType, $acc);
     $stmt4->execute();
 
+    //inserts OS into oS table if new device found
     $stmt5 = $con->prepare("CALL insertOS(?,?,?,?)");
     $stmt5->bind_param('sssi', $ipOS, $timestamp, $osType, $acc);
     $stmt5->execute();

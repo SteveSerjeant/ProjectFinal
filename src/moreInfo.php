@@ -10,13 +10,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 include_once ("dbconn.php");
 
-session_start();
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: index.php?err=" . base64_encode("notlogged"));
-    exit;
+//session_start();
+//// Check if the user is logged in, if not then redirect him to login page
+//if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+//    header("location: index.php?err=" . base64_encode("notlogged"));
+//    exit;
 
-}
+//}
 ?>
 
 <head>

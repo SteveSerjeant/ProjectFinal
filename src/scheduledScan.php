@@ -1,7 +1,5 @@
 <?php
-
 include ("dbconn.php");
-
 $forDelete = "C:\Program Files\Ampps\www\ProjectFinal\src\scheduledScanDevices.xml";
 $forDelete1 = "C:\Program Files\Ampps\www\ProjectFinal\src\scheduledScanOS.xml";
 
@@ -18,9 +16,6 @@ if (strpos(file_get_contents("C:\Program Files\Ampps\www\ProjectFinal\src\schedu
     $fileOS = simplexml_load_file("C:\Program Files\Ampps\www\ProjectFinal\src\scheduledScanOS.xml");
 
     $timestamp = $file['startstr'];
-
-
-
 
     $stmt = $con->prepare("CALL insertTimestamp(?)");
     $stmt->bind_param('s', $timestamp);
@@ -43,9 +38,7 @@ if (strpos(file_get_contents("C:\Program Files\Ampps\www\ProjectFinal\src\schedu
         $stmt3 = $con->prepare("CALL insertDevicesV2(?,?,?,?)");
         $stmt3->bind_param('ssss', $mac, $ip, $hostName, $timestamp);
         $stmt3->execute();
-
     }
-
     $stmt2->close();
     $stmt3->close();
 
@@ -69,10 +62,7 @@ if (strpos(file_get_contents("C:\Program Files\Ampps\www\ProjectFinal\src\schedu
             $stmt6 = $con->prepare("INSERT INTO portInfo (ipAddress, portID, state, serviceName, timestamp ) VALUES (?,?,?,?,?)");
             $stmt6->bind_param("sssss",  $addr,$port, $state, $service, $timestamp);
             $stmt6->execute();
-
         }
-
-
 
     }
     $stmt6->close();
@@ -93,25 +83,15 @@ if (strpos(file_get_contents("C:\Program Files\Ampps\www\ProjectFinal\src\schedu
         $stmt5 = $con->prepare("CALL insertOS(?,?,?,?)");
         $stmt5->bind_param('sssi', $ipOS, $timestamp, $osType, $acc);
         $stmt5->execute();
-
     }
 
     $stmt4->close();
     $stmt5->close();
-
-
-
     $con->close();
-
-
 }
-
-
 else {
     sleep(60);
     filesExist();
-
 }
-
 
 filesExist();
